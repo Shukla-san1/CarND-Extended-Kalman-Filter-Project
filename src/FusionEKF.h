@@ -32,11 +32,13 @@ public:
   KalmanFilter ekf_;
 
 private:
-  // check whether the tracking toolbox was initiallized or not (first measurement)
+  // check whether the tracking tool box was initiallized or not (first measurement)
   bool is_initialized_;
 
-  // previous timestamp
+  // previous time stamp
   long long previous_timestamp_;
+  float noise_ax;
+  float noise_ay;
 
   // tool object used to compute Jacobian and RMSE
   Tools tools;
@@ -44,6 +46,7 @@ private:
   Eigen::MatrixXd R_radar_;
   Eigen::MatrixXd H_laser_;
   Eigen::MatrixXd Hj_;
+
 };
 
 #endif /* FusionEKF_H_ */

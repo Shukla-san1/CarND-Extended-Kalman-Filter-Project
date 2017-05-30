@@ -1,6 +1,7 @@
 #ifndef KALMAN_FILTER_H_
 #define KALMAN_FILTER_H_
 #include "Eigen/Dense"
+#define PI 3.14159265358979323846
 
 class KalmanFilter {
 public:
@@ -63,6 +64,8 @@ public:
    * @param z The measurement at k+1
    */
   void UpdateEKF(const Eigen::VectorXd &z);
+
+  float Normalize_angle(float);
 
 };
 
